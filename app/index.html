@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GTA VI Trophy Guide &amp; Tracker — All 55 PS5 Trophies</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <h1>Grand Theft Auto VI — Trophy Guide &amp; Tracker</h1>
+    <p class="sub">All 55 official PlayStation 5 trophies: 1 Platinum · 2 Gold · 6 Silver · 46 Bronze · 28 hidden · no online trophies. Platinum ≈ 200 hours, difficulty ≈ 4/10. Works fully offline — your checklist lives in this browser.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="progress card" id="progressCard" aria-label="Progress">
+    <div class="progress-head">
+      <div>
+        <div class="big" id="progressBig">0 / 55</div>
+        <div class="muted" id="progressDetail">0% complete · 0 Gamerscore of 1,000</div>
+      </div>
+      <div class="grade-counts" id="gradeCounts"></div>
+    </div>
+    <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="55" aria-valuenow="0" id="progressBarWrap">
+      <div class="bar-fill" id="progressBar" style="width:0%"></div>
+    </div>
+    <div class="progress-actions">
+      <button id="exportBtn" type="button">Export progress</button>
+      <button id="importBtn" type="button">Import progress</button>
+      <input type="file" id="importFile" accept="application/json,.json" hidden>
+      <button id="resetBtn" type="button" class="danger">Reset all</button>
+      <span class="muted small" id="saveState">Saved in this browser (localStorage).</span>
+    </div>
+  </section>
+
+  <section class="card warn" id="missableCard" aria-label="Missable trophy warning">
+    <h2>⚠ The one missable trophy</h2>
+    <p><strong>Positive Mental Attitude</strong> (Bronze) — meditate at every spot across Leonida. Lucia's balcony meditation in <strong>Chapter 1</strong> counts toward it and disappears after Chapter 1. There is no mission replay, so keep a <strong>manual save at the start of every chapter</strong> and one before the final mission. Every other trophy can be earned after the credits.</p>
+  </section>
+
+  <section class="card" id="roadmapCard" aria-label="Roadmap to the platinum">
+    <h2>Roadmap to the Platinum — “Vice Got a Price!”</h2>
+    <ol class="roadmap" id="roadmapList">
+      <li><strong>Before you start:</strong> turn off cheats (they disable trophies and saving). Make a manual save at the start of Chapter 1.</li>
+      <li><strong>Stage 1 — Story, Chapters 1–4:</strong> play the campaign in order; clear meditation spots (incl. Lucia's balcony in Ch. 1), stranger missions and WAiNK spots in each newly opened area. Chapter trophies: Paradise Lost → T**s Ass Drug Money → Vice City, Baby! → Top Of The World, Ma.</li>
+      <li><strong>Stage 2 — Final mission:</strong> manual save first, then complete it for “You Gotta Know When to Get Off” (Gold). The open world stays available afterwards.</li>
+      <li><strong>Stage 3 — Side strands &amp; activities:</strong> finish the Kenton, Billy, Andy, Randy, Tyrone and Bret strands; 8 Strangers &amp; Freaks strands (Andy, Billy and Tyrone do <em>not</em> count); races, drone races, shooting range, fishing, arcade, bowling.</li>
+      <li><strong>Stage 4 — Collectibles &amp; grinds:</strong> 3 card sets, 100 WAiNK spots, 100 vehicles, all garages, 5 bank vaults (unlock via “That's Where The Money Is”, late Ch. 4), 1 illegal operation per gang, $250,000 laundered, 250 stunts, 50 Challenges.</li>
+      <li><strong>Stage 5 — 100% completion:</strong> the stricter checklist — 300 stunts, 70 of 80 Challenges, 200 of 277 vehicles, all 8 vaults, all 39 illegal operations, 42 shooting-range golds, all 14 Top Fun locations — earns “A Long Road” (Gold), then the Platinum pops.</li>
+    </ol>
+  </section>
+
+  <section class="controls card" aria-label="Search and filters">
+    <input type="search" id="searchBox" placeholder="Search trophies by name or description…" aria-label="Search trophies">
+    <div class="filter-row" id="kindFilters" role="group" aria-label="Filter by kind">
+      <button type="button" data-kind="all" class="active">All (55)</button>
+      <button type="button" data-kind="story">Story</button>
+      <button type="button" data-kind="missable">⚠ Missable</button>
+      <button type="button" data-kind="collectible">Collectibles</button>
+      <button type="button" data-kind="activity">Activities</button>
+      <button type="button" data-kind="platinum">Platinum</button>
+    </div>
+    <div class="filter-row" id="gradeFilters" role="group" aria-label="Filter by grade">
+      <button type="button" data-grade="all" class="active">All grades</button>
+      <button type="button" data-grade="Platinum">Platinum</button>
+      <button type="button" data-grade="Gold">Gold</button>
+      <button type="button" data-grade="Silver">Silver</button>
+      <button type="button" data-grade="Bronze">Bronze</button>
+    </div>
+    <div class="filter-row toggles">
+      <label><input type="checkbox" id="hideEarnedBox"> Hide earned</label>
+      <label><input type="checkbox" id="spoilerBox" checked> Spoiler-safe mode — hide story trophies until earned</label>
+      <label><input type="checkbox" id="unearnedOnlyBox"> Show unearned only</label>
+    </div>
+    <p class="muted small" id="resultCount"></p>
+  </section>
+
+  <section id="trophyList" aria-label="Trophy list"></section>
+
+  <section class="card" id="sourcesCard">
+    <h2>Sources</h2>
+    <p>Trophy names, official descriptions, grades and Gamerscore are as PlayStation publishes them, cross-checked across:</p>
+    <ul>
+      <li><a href="https://outputlag.com/guides/gta-6-trophy-list/">Output Lag — GTA 6 Trophy List</a></li>
+      <li><a href="https://egamers.io/gta-6-trophy-list-all-55-trophies-and-achievements-plus-the-hardest-ones/">EGamers — GTA 6 Trophy List: All 55 Trophies and Achievements</a></li>
+      <li><a href="https://leonidainteractive.com/wiki/guides/trophies-achievements/">Leonida Interactive Wiki — Trophies &amp; Achievements</a></li>
+      <li><a href="https://www.u7buy.com/blog/gta-6-trophies/">u7buy Blog — GTA 6 Trophies</a></li>
+    </ul>
+    <p class="muted small">Guides on this page are written in the authors' own words for this guide; sources are cited beside each trophy. No Rockstar Games logo, artwork or game screenshots are used. This is an unofficial fan guide, not affiliated with Rockstar Games or PlayStation.</p>
+  </section>
+</main>
+
+<footer class="wrap muted small">
+  <p>GTA VI Trophy Guide &amp; Tracker — offline static web app. Data: app/data/trophies.json. Progress is stored only in your browser.</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
